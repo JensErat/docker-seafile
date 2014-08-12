@@ -3,9 +3,6 @@ MAINTAINER	Jens Erat <email@jenserat.de>
 
 RUN apt-get update
 
-# Update certificates, so we can wget seafile later
-RUN apt-get install -y ca-certificates
-
 # Seafile dependencies and system configuration
 RUN apt-get install -y python2.7 python-setuptools python-simplejson python-imaging sqlite3
 RUN ulimit -n 30000
