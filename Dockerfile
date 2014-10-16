@@ -10,7 +10,7 @@ RUN ulimit -n 30000
 # Interface the environment
 RUN mkdir /opt/seafile
 VOLUME /opt/seafile
-EXPOSE 10001 12001 8000 8082
+EXPOSE 10001 12001 8000 8080 8082
 
 # Baseimage init process
 ENTRYPOINT ["/sbin/my_init"]

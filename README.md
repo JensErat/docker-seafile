@@ -18,6 +18,7 @@ For example, you could use
       -p 10001:10001 \
       -p 12001:12001 \
       -p 8000:8000 \
+      -p 8080:8080 \
       -p 8082:8082 \
       -v /srv/seafile:/opt/seafile \
       jenserat/seafile -- /bin/bash
@@ -39,6 +40,7 @@ Run the image again, this time you probably want to give it a name for using som
       -p 10001:10001 \
       -p 12001:12001 \
       -p 8000:8000 \
+      -p 8080:8080 \
       -p 8082:8082 \
       -v /srv/seafile:/opt/seafile \
       -e autostart=true \
