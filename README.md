@@ -46,6 +46,12 @@ Run the image again, this time you probably want to give it a name for using som
       -e autostart=true \
       jenserat/seafile
 
+For proxying Seafile using nginx, enable FastCGI by adding `-e fastcgi=true`.
+
 ## Updates and Maintenance
 
 The Seafile binaries are stored in the permanent volume `/opt/seafile`. To update the base system, just stop and drop the container, update the image using `docker pull jenserat/seafile` and run it again. To update Seafile, follow the normal upgrade process described in the [Seafile upgrade manual](https://github.com/haiwen/seafile/wiki/Upgrading-Seafile-Server). `download-seafile` might help you with the first steps if already updated to the newest version.
+
+## Workaround for [Seafile issue #478](https://github.com/haiwen/seafile/issues/478)
+
+If used in FastCGI mode, like [recommended when proxying WebDAV](http://manual.seafile.com/extension/webdav.html#sample-configuration-2-with-nginxapache), seafdav only listens on `localhost:8080`; with consequence that it cannot be exposed. The image has a workaround built-in, which uses `socat` listening on `0.0.0.0:8080`, forwarding to `localhost:8081`. To use it, modify `/opt/seafile/conf/seafdav.conf` and change the `port` to `8081`, and restart the container enabling the workaround using `-e workaround478=true`.

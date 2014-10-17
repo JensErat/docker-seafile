@@ -7,6 +7,9 @@ RUN apt-get update
 RUN apt-get install -y python2.7 python-setuptools python-simplejson python-imaging sqlite3
 RUN ulimit -n 30000
 
+# Workaround for https://github.com/haiwen/seafile/issues/478
+RUN apt-get install -y socat
+
 # Interface the environment
 RUN mkdir /opt/seafile
 VOLUME /opt/seafile
