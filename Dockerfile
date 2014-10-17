@@ -4,7 +4,7 @@ MAINTAINER	Jens Erat <email@jenserat.de>
 RUN apt-get update
 
 # Seafile dependencies and system configuration
-RUN apt-get install -y python2.7 python-setuptools python-simplejson python-imaging sqlite3
+RUN apt-get install -y python2.7 python-setuptools python-simplejson python-imaging sqlite3 python-mysqldb
 RUN ulimit -n 30000
 
 # Workaround for https://github.com/haiwen/seafile/issues/478
