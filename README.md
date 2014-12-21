@@ -1,9 +1,9 @@
-# Seafile 3 for Docker
+# Seafile 4 for Docker
 
 [Seafile](http://www.seafile.com/) is a "next-generation open source cloud storage
 with advanced features on file syncing, privacy protection and teamwork".
 
-This Dockerfile does not really package Seafile 3 for Docker, but provides an environment for running it including startup scripts, including all dependencies for both a SQLite or MySQL (requires external MySQL database, for example in another container) setup.
+This Dockerfile does not really package Seafile 4 for Docker, but provides an environment for running it including startup scripts, including all dependencies for both a SQLite or MySQL (requires external MySQL database, for example in another container) setup.
 
 ## Setup
 
