@@ -26,10 +26,21 @@ For example, you could use
 Consider using a reverse proxy for using HTTPs.
 
 1. After the container is started, run `download-seafile` to download Seafile and prepare setting it up.
-2. Once downloaded, run `/opt/seafile/seafile-server-3.*/setup-seafile.sh`, and go through the setup assistant. Do not change the port and storage location defaults, but change the run command appropriately.
+2. Once downloaded, run `/opt/seafile/seafile-server-4.*/setup-seafile.sh`, and go through the setup assistant. Do not change the port and storage location defaults, but change the run command appropriately.
 3. Run `/opt/seafile/seafile-server-latest/seahub.sh start` for configuring the web UI.
 4. If you want, do more configuration of Seafile. You can also already try it out.
 5. Setting up Seafile is finished, `exit` the container.
+
+In case you want to use memcached instead of /tmp/seahub_cache/ add the following to your seahub_settings.py
+
+    CACHES = {
+      'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': 'memcached:11211',
+      }
+    }
+
+Link your memcached instance to your seafile container by adding `--link memcached_container:memcached` to your docker run statement.
 
 ## Running Seafile
 
