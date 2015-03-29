@@ -1,10 +1,11 @@
 FROM		phusion/baseimage
 MAINTAINER	Jens Erat <email@jenserat.de>
 
-RUN apt-get update
+ENV DEBIAN_FRONTEND noninteractive
 
 # Seafile dependencies and system configuration
-RUN apt-get install -y python2.7 python-setuptools python-simplejson python-imaging sqlite3 python-mysqldb python-memcache
+RUN apt-get update && \
+    apt-get install -y python2.7 python-setuptools python-simplejson python-imaging sqlite3 python-mysqldb python-memcache
 RUN ulimit -n 30000
 
 # Workaround for https://github.com/haiwen/seafile/issues/478
