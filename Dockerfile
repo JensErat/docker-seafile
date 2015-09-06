@@ -5,11 +5,8 @@ ENV DEBIAN_FRONTEND noninteractive
 
 # Seafile dependencies and system configuration
 RUN apt-get update && \
-    apt-get install -y python2.7 python-setuptools python-simplejson python-imaging sqlite3 python-mysqldb python-memcache
+    apt-get install -y python2.7 python-setuptools python-simplejson python-imaging sqlite3 python-mysqldb python-memcache wget socat
 RUN ulimit -n 30000
-
-# Workaround for https://github.com/haiwen/seafile/issues/478
-RUN apt-get install -y socat
 
 # Interface the environment
 RUN mkdir /opt/seafile
