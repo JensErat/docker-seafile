@@ -5,7 +5,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 # Seafile dependencies and system configuration
 RUN apt-get update && \
-    apt-get install -y python2.7 python-setuptools python-simplejson python-imaging sqlite3 python-mysqldb python-memcache wget socat
+    apt-get install -y python2.7 python-setuptools python-simplejson python-imaging sqlite3 python-mysqldb python-memcache python-urllib3 wget socat
 RUN ulimit -n 30000
 
 # Interface the environment
