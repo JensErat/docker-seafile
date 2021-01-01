@@ -1,3 +1,7 @@
+# Unmaintained
+
+I stopped using Seafile and this Dockerfile some time ago. This repository is not maintained any more, and the image is outdated. It is still available as an archive though.
+
 # Seafile 5 for Docker
 
 [Seafile](http://www.seafile.com/) is a "next-generation open source cloud storage
